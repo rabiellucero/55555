@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> My Portfolio</title> My Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:darkred;
+color:black;
+overflow-x:hidden;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+content:'';
+position:fixed;
+width:700px;
+height:700px;
+background:black;
+filter:blur(220px);
+top:-250px;
+left:-250px;
+opacity:.45;
+animation:move1 10s infinite alternate;
+z-index:-3;
+
+}
+
+body::after{
+
+content:'';
+position:fixed;
+width:700px;
+height:700px;
+background:green;
+filter:blur(220px);
+bottom:-250px;
+right:-250px;
+opacity:.45;
+animation:move2 12s infinite alternate;
+z-index:-3;
+
+}
+
+@keyframes move1{
+
+100%{
+transform:translate(120px,120px);
+}
+
+}
+
+@keyframes move2{
+
+100%{
+transform:translate(-120px,-80px);
+}
+
+}
+
+header{
+
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.1);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:700;
+
+background:linear-gradient(90deg,black,white);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:white;
+margin-left:35px;
+font-size:17px;
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:black;
+
+}
+
+section{
+
+padding:120px 8%;
+
+}
+
+.home{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+min-height:100vh;
+gap:50px;
+
+}
+
+.home-text h3{
+
+font-size:26px;
+color:black;
+
+}
+
+.home-text h1{
+
+font-size:65px;
+margin:15px 0;
+
+}
+
+.home-text p{
+
+max-width:560px;
+line-height:1.8;
+color:white;
+
+}
+
+.btn{
+
+display:inline-block;
+margin-top:35px;
+padding:15px 40px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+
+background:linear-gradient(90deg,#3b82f6,red);
+
+color:white;
+
+transition:.4s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(59,130,246,.45);
+
+}
+
+.home-img{
+
+width:380px;
+height:380px;
+border-radius:50%;
+
+background:linear-gradient(45deg,#3b82f6,white);
+
+padding:8px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.home-img img{
+
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #070b18;
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+.title{
+
+text-align:center;
+font-size:45px;
+margin-bottom:70px;
+
+}
+
+.about-box{
+
+background:light red(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+padding:40px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.1);
+
+line-height:1.9;
+
+}
+```html
+/* ============================
+   SKILLS SECTION
+============================= */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.skill-box{
+
+background:white(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:20px;
+border:1px solid white(255,255,255,.1);
+transition:.4s;
+
+}
+
+.skill-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+.skill-box h3{
+
+margin-bottom:15px;
+
+}
+
+.bar{
+
+width:100%;
+height:12px;
+background:#222;
+border-radius:30px;
+overflow:hidden;
+
+}
+
+.bar span{
+
+display:block;
+height:100%;
+border-radius:30px;
+background:linear-gradient(90deg,#3b82f6,#9333ea);
+
+}
+
+.html{
+width:95%;
+}
+
+.css{
+width:90%;
+}
+
+.javascript{
+width:80%;
+}
+
+.php{
+width:85%;
+}
+
+.mysql{
+width:82%;
+}
+
+.cplusplus{
+width:88%;
+}
+
+/* ============================
+PROJECTS
+============================= */
+
+.projects{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+
+}
+
+.project-card{
+
+background:rgba(255,255,255,.05);
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+border:1px solid rgba(255,255,255,.1);
+
+}
+
+.project-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 15px 40px rgba(59,130,246,.4);
+
+}
+
+.project-card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.project-info{
+
+padding:25px;
+
+}
+
+.project-info h3{
+
+margin-bottom:10px;
+
+}
+
+.project-info p{
+
+color:#d1d5db;
+line-height:1.7;
+
+}
+
+/* ============================
+CONTACT
+============================= */
+
+.contact{
+
+text-align:center;
+
+}
+
+.contact-box{
+
+margin:auto;
+max-width:700px;
+
+background:rgba(255,255,255,.05);
+
+padding:40px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.1);
+
+}
+
+.contact-box p{
+
+margin:15px 0;
+font-size:18px;
+
+}
+
+/* ============================
+FOOTER
+============================= */
+
+footer{
+
+padding:25px;
+text-align:center;
+background:#040611;
+margin-top:60px;
+
+}
+
+/* ============================
+RESPONSIVE
+============================= */
+
+@media(max-width:900px){
+
+.home{
+
+flex-direction:column-reverse;
+text-align:center;
+
+}
+
+.home-text h1{
+
+font-size:45px;
+
+}
+
+.home-img{
+
+width:280px;
+height:280px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2 class="logo">SK RABIEL</h2>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="home" id="home">
+
+<div class="home-text">
+
+
+<h1> Hello, I'm Rabiel Lucero</h1>
+
+<p>
+Bachelor of Science in Computer Science student passionate about Web Development, Programming, and UI/UX Design. I love creating modern and responsive websites with beautiful interfaces.
+</p>
+
+<a href="#projects" class="btn">View My Projects</a>
+
+</div>
+
+<div class="home-img">
+
+<img src="\profile.jpeg" alt="Profile">
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="about-box">
+
+<p>
+
+Hi! I'm <strong>Rabiel Lucero</strong>, a Computer Science student who enjoys building websites, programming systems, and learning new technologies. My goal is to become a professional Full-Stack Developer and create innovative digital solutions.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">My Skills</h2>
+
+<div class="skills">
+
+<div class="skill-box">
+<h3>HTML</h3>
+<div class="bar"><span class="html"></span></div>
+</div>
+
+<div class="skill-box">
+<h3>CSS</h3>
+<div class="bar"><span class="css"></span></div>
+</div>
+
+<div class="skill-box">
+<h3>JavaScript</h3>
+<div class="bar"><span class="javascript"></span></div>
+</div>
+
+<div class="skill-box">
+<h3>PHP</h3>
+<div class="bar"><span class="php"></span></div>
+</div>
+
+<div class="skill-box">
+<h3>MySQL</h3>
+<div class="bar"><span class="mysql"></span></div>
+</div>
+
+<div class="skill-box">
+<h3>C++</h3>
+<div class="bar"><span class="cplusplus"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+
+<img src="/project1.jpeg">
+
+<div class="project-info">
+
+<h3>BAKE SHOP</h3>
+
+<p>Yummy and Delicious Cake.</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="/project.jpeg">
+
+<div class="project-info">
+
+<h3>ARDUINO</h3>
+
+<p>Coin Operated Yellow Paper Vending Machine.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+
+<p>FB: https://www.facebook.com/share/1DbCFsfmS9/?mibextid=wwXIfr</p>
+
+<p>📍New Salem Gerona Tarlac, Philippines</p>
+
+<a href="#" class="btn">Send Message</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Rabiel Lucero | All Rights Reserved.</p>
+
+</footer>
+
+</body>
+
+</html>
